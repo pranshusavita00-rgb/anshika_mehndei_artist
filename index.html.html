@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mehndi Artist</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  /* Navbar (from earlier) */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #8B0000;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  .navbar .logo { color: #fff; font-size: 24px; font-weight: bold; }
+  .navbar ul { list-style: none; display: flex; margin: 0; padding: 0; }
+  .navbar ul li { margin: 0 15px; }
+  .navbar ul li a { color: #fff; text-decoration: none; font-weight: 500; transition: color 0.3s; }
+  .navbar ul li a:hover { color: #ffa07a; }
+  .social-icons a { color: #fff; margin-left: 10px; font-size: 20px; transition: color 0.3s; }
+  .social-icons a:hover { color: #ffa07a; }
+  .menu-toggle { display: none; font-size: 24px; color: #fff; cursor: pointer; }
+
+  @media (max-width: 768px) {
+    .navbar ul { display: none; flex-direction: column; width: 100%; background-color: #8B0000; position: absolute; top: 60px; left: 0; padding: 10px 0; }
+    .navbar ul.active { display: flex; }
+    .navbar ul li { margin: 10px 0; text-align: center; }
+    .menu-toggle { display: block; }
+    .social-icons { display: none; }
+  }
+
+  /* Hero Section */
+  .hero {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+  }
+  .slide {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    object-fit: cover;
+  }
+  .slide.active {
+    display: block;
+    animation: fade 1s ease-in-out;
+  }
+  @keyframes fade {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+  }
+
+  /* Slider text */
+  .hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+  }
+  .hero-text h1 { font-size: 48px; margin: 0; text-shadow: 2px 2px 5px rgba(0,0,0,0.6); }
+  .hero-text p { font-size: 20px; margin-top: 10px; text-shadow: 1px 1px 4px rgba(0,0,0,0.6); }
+
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="logo">Anshika_mehndi_artist
+</div>
+  <i class="fas fa-bars menu-toggle"></i>
+  <ul>
+    <li><a href="#">Home</a></li>
+    
+    <li><a href="#">About Us</a></li>
+    <li><a href="#">Service</a></li>
+    <li><a href="#">Gallery</a></li>
+    <li><a href="#">Contact Us</a></li>
+  </ul>
+  <div class="social-icons">
+    <a href="#https://wa.me/918006028201"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://www.instagram.com/anshika_mehndi_artist/"><i class="fab fa-instagram"></i></a>
+    <a href="#tel:+916386345286"><i class="fas fa-phone"></i></a>
+    <a href="#"><i class="fas fa-map-marker-alt"></i></a>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<div class="hero">
+  <img src="images.jpg" class="slide active" alt="Mehndi Design 1">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbmM9QTkjgUZTUxgM56OiDEq9EGIUV6aOOkQ&s" class="slide" alt="Mehndi Design 2">
+  <div class="hero-text">
+    <h1>Welcome to MehndiArt</h1>
+    <p>Elegant Mehndi Designs for Every Occasion</p>
+  </div>
+</div>
+<!-- About Us Section -->
+<section id="about" style="padding: 60px 20px; background-color: #fff;">
+
+  <!-- Centered Heading -->
+  <div style="text-align: center; margin-bottom: 40px;">
+    <h2 style="color: #8B0000; font-size: 36px; margin: 0;">About Us</h2>
+  </div>
+
+  <!-- Image + Text Content -->
+  <div style="max-width: 1000px; margin: auto; display: flex; flex-wrap: wrap; align-items: center; gap: 30px;">
+    <!-- About Image -->
+    <div style="flex: 1; min-width: 300px; max-width: 400px; height: 400px;">
+      <img src="img 2.jpeg" 
+           alt="Mehndi Artist" 
+           style="width: 100%; height: 100%; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); object-fit: cover;">
+    </div>
+    
+    <!-- About Text -->
+    <div style="flex: 1; min-width: 300px;">
+      <p style="font-size: 18px; line-height: 1.8; color: #333;">
+        Welcome to <strong>MehndiArt</strong>, where every design tells a story! 🎨✨  
+        From **intricate bridal patterns** to **trendy party mehndi**, we create art that captures the essence of celebration.
+      </p>
+      <p style="font-size: 18px; line-height: 1.8; color: #333;">
+        Our skilled artists blend <strong>traditional elegance</strong> with <strong>modern creativity</strong>, ensuring every design is <em>unique</em> and <em>memorable</em>. 
+        We don’t just apply mehndi — we craft experiences that make your special moments even more magical.
+      </p>
+      <p style="font-size: 18px; line-height: 1.8; color: #333;">
+        Step into <strong>MehndiArt</strong> and let your hands become a canvas of joy, beauty, and celebration.  
+        Your moments deserve art that’s as **vibrant** and **extraordinary** as you are! 💫
+      </p>
+    </div>
+  </div>
+</section>
+<!-- Services Section with Working Slider -->
+<section id="services" style="padding:60px 20px; background-color:#fdf5f0;">
+  <div style="text-align:center; margin-bottom:40px;">
+    <h2 style="color:#8B0000; font-size:36px; margin:0;">Our Services</h2>
+  </div>
+
+  <div style="max-width:1200px; margin:auto; position:relative; overflow:hidden;">
+    <!-- Slider Container -->
+    <div id="serviceSlider" style="display:flex; gap:20px; transition:transform 0.5s ease;">
+      <!-- 8 Cards -->
+      <div class="service-card">
+        <img src="img 2.jpeg" style="width:100%; border-radius:10px; margin-bottom:10px;">
+        <h3 style="color:#8B0000;">Bridal Mehndi</h3>
+        <p>Intricate bridal mehndi designs.</p>
+      </div>
+      <div class="service-card">
+        <img src="img4.jpeg" style="width:100%; border-radius:10px; margin-bottom:10px;">
+        <h3 style="color:#8B0000;">Party Mehndi</h3>
+        <p>Trendy mehndi patterns.</p>
+      </div>
+      <div class="service-card">
+        <img src="kids.jpeg" style="width:100%; border-radius:10px; margin-bottom:10px;">
+        <h3 style="color:#8B0000;">Kids Mehndi</h3>
+        <p>Fun and cute mehndi designs.</p>
+      </div>
+      <div class="service-card">
+        <img src="img6.jpeg" style="width:100%; border-radius:10px; margin-bottom:10px;">
+        <h3 style="color:#8B0000;">Festival Mehndi</h3>
+        <p>Elegant festival designs.</p>
+      </div>
+      <div class="service-card">
+        <img src="img11.jpeg" style="width:100%; border-radius:10px; margin-bottom:10px;">
+        <h3 style="color:#8B0000;">Engagement Mehndi</h3>
+        <p>Beautiful engagement patterns.</p>
+      </div>
+      <div class="service-card">
+        <img src="img10.jpeg" style="width:100%; border-radius:10px; margin-bottom:10px;">
+        <h3 style="color:#8B0000;">Custom Designs</h3>
+        <p>Personalized mehndi artwork.</p>
+      </div>
+      <div class="service-card">
+        <img src="img9.jpeg" style="width:100%; border-radius:10px; margin-bottom:10px;">
+        <h3 style="color:#8B0000;">Henna Parties</h3>
+        <p>Fun small party mehndi sessions.</p>
+      </div>
+      <div class="service-card">
+        <img src="img3.jpeg" style="width:100%; border-radius:10px; margin-bottom:10px;">
+        <h3 style="color:#8B0000;">Festival Specials</h3>
+        <p>Exclusive festival designs.</p>
+      </div>
+    </div>
+
+    <!-- Slider Buttons -->
+    <button onclick="slideLeft()" style="position:absolute; top:50%; left:0; transform:translateY(-50%); background:#8B0000; color:#fff; border:none; padding:10px; border-radius:50%; cursor:pointer;">&#10094;</button>
+    <button onclick="slideRight()" style="position:absolute; top:50%; right:0; transform:translateY(-50%); background:#8B0000; color:#fff; border:none; padding:10px; border-radius:50%; cursor:pointer;">&#10095;</button>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonials" style="padding:60px 20px; background-color:#fff;">
+  <div style="text-align:center; margin-bottom:40px;">
+    <h2 style="color:#8B0000; font-size:36px; margin:0;">What Our Clients Say</h2>
+  </div>
+
+  <div style="max-width:1200px; margin:auto; display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">
+    <!-- Testimonial 1 -->
+    <div style="flex:0 0 calc(33.33% - 20px); background:#fdf5f0; border-radius:10px; padding:20px; box-shadow:0 4px 8px rgba(0,0,0,0.2); text-align:center;">
+      <img src="" style="width:80px; height:80px; border-radius:50%; margin-bottom:15px;">
+      <p style="font-style:italic; color:#333;">"The bridal mehndi was absolutely stunning! Everyone admired it."</p>
+      <h4 style="color:#8B0000; margin-top:10px;">Priya Sharma</h4>
+    </div>
+
+    <!-- Testimonial 2 -->
+    <div style="flex:0 0 calc(33.33% - 20px); background:#fdf5f0; border-radius:10px; padding:20px; box-shadow:0 4px 8px rgba(0,0,0,0.2); text-align:center;">
+      <img src="" style="width:80px; height:80px; border-radius:50%; margin-bottom:15px;">
+      <p style="font-style:italic; color:#333;">"Amazing party mehndi designs. Loved the creativity and detail."</p>
+      <h4 style="color:#8B0000; margin-top:10px;">Rohit Verma</h4>
+    </div>
+
+    <!-- Testimonial 3 -->
+    <div style="flex:0 0 calc(33.33% - 20px); background:#fdf5f0; border-radius:10px; padding:20px; box-shadow:0 4px 8px rgba(0,0,0,0.2); text-align:center;">
+      <img src="" style="width:80px; height:80px; border-radius:50%; margin-bottom:15px;">
+      <p style="font-style:italic; color:#333;">"Kids mehndi designs were super cute and fun. Highly recommend!"</p>
+      <h4 style="color:#8B0000; margin-top:10px;">Anita Kapoor</h4>
+    </div>
+    
+    <!-- Testimonial 4 -->
+    <div style="flex:0 0 calc(33.33% - 20px); background:#fdf5f0; border-radius:10px; padding:20px; box-shadow:0 4px 8px rgba(0,0,0,0.2); text-align:center;">
+      <img src="" style="width:80px; height:80px; border-radius:50%; margin-bottom:15px;">
+      <p style="font-style:italic; color:#333;">"Festival mehndi designs were so elegant. Love the attention to detail."</p>
+      <h4 style="color:#8B0000; margin-top:10px;">Vikram Singh</h4>
+    </div>
+  </div>
+</section>
+
+<!-- Offers Section -->
+<section id="offers" style="padding:60px 20px; background-color:#fff;">
+  <div style="text-align:center; margin-bottom:40px;">
+    <h2 style="color:#8B0000; font-size:36px; font-family:'Great Vibes', cursive; margin:0;">Special Offers</h2>
+  </div>
+
+  <div class="offers-container">
+    <!-- Offer 1 -->
+    <div class="offer-card">
+      <h3>Wedding Bridal Special</h3>
+      <p>Get 20% off on bridal mehndi for weddings booked this month!</p>
+    </div>
+
+    <!-- Offer 2 -->
+    <div class="offer-card">
+      <h3>Festive Package</h3>
+      <p>Book 2 mehndi sessions and get 1 free festive design session.</p>
+    </div>
+
+    <!-- Offer 3 -->
+    <div class="offer-card">
+      <h3>Party Mehndi Offer</h3>
+      <p>Flat 15% discount on mehndi for parties with 5 or more guests.</p>
+    </div>
+  </div>
+</section>
+
+<style>
+.offers-container {
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  flex-wrap:wrap; /* allows wrapping if very small screen */
+}
+
+.offer-card {
+  flex:1 1 0; /* allows cards to shrink/grow equally */
+  min-width:250px; /* prevents too small cards */
+  background: linear-gradient(135deg, #fdebd0, #fef3f1);
+  border-radius:15px;
+  padding:30px 20px;
+  text-align:center;
+  box-shadow:0 6px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor:pointer;
+  max-width:32%; /* ensures 3 cards in a row */
+}
+
+.offer-card h3 {
+  color:#8B0000;
+  font-family:'Great Vibes', cursive;
+  font-size:24px;
+  margin-bottom:15px;
+}
+.offer-card p {
+  font-family:'Poppins', sans-serif;
+  font-size:16px;
+  color:#333;
+}
+
+.offer-card:hover {
+  transform: translateY(-10px);
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+  background: linear-gradient(135deg, #ffe6e1, #fdebd0);
+}
+
+/* Responsive adjustments */
+@media(max-width:992px){
+  .offer-card { max-width:48%; } /* 2 per row */
+}
+@media(max-width:600px){
+  .offer-card { max-width:100%; } /* 1 per row */
+}
+</style>
+
+
+<!-- Contact Us Section -->
+<section id="contact" style="padding:60px 20px; background-color:#fdf5f0;">
+  <div style="text-align:center; margin-bottom:40px;">
+    <h2 style="color:#8B0000; font-size:36px; margin:0;">Contact Us</h2>
+  </div>
+
+  <div style="max-width:1200px; margin:auto; display:flex; flex-wrap:wrap; gap:30px; justify-content:center;">
+    <!-- Contact Form -->
+    <div style="flex:1; min-width:300px; background:#fff; padding:30px; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
+      <form>
+        <label style="display:block; margin-bottom:5px; color:#333;">Name</label>
+        <input type="text" placeholder="Your Name" style="width:100%; padding:10px; margin-bottom:15px; border-radius:5px; border:1px solid #ccc;">
+        
+        <label style="display:block; margin-bottom:5px; color:#333;">Email</label>
+        <input type="email" placeholder="Your Email" style="width:100%; padding:10px; margin-bottom:15px; border-radius:5px; border:1px solid #ccc;">
+
+        <label style="display:block; margin-bottom:5px; color:#333;">Phone</label>
+        <input type="text" placeholder="Your Phone" style="width:100%; padding:10px; margin-bottom:15px; border-radius:5px; border:1px solid #ccc;">
+
+        <label style="display:block; margin-bottom:5px; color:#333;">Message</label>
+        <textarea placeholder="Your Message" rows="5" style="width:100%; padding:10px; margin-bottom:15px; border-radius:5px; border:1px solid #ccc;"></textarea>
+
+        <button type="submit" style="background:#8B0000; color:#fff; padding:12px 25px; border:none; border-radius:5px; cursor:pointer;">Send Message</button>
+      </form>
+
+      <!-- Social Media -->
+      <div style="margin-top:20px; text-align:center;">
+        <a href="#" style="margin:0 10px; color:#8B0000; font-size:24px;">📞</a>
+        <a href="#" style="margin:0 10px; color:#8B0000; font-size:24px;">📸</a>
+        <a href="#" style="margin:0 10px; color:#8B0000; font-size:24px;">💬</a>
+      </div>
+    </div>
+
+    <!-- Map -->
+    <div style="flex:1; min-width:300px; border-radius:10px; overflow:hidden; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.501681666062!2d-74.0060!3d40.7128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQyJzQ2LjAiTiA3NMKwMDAnMjcuMCJX!5e0!3m2!1sen!2sin!4v1695982781370!5m2!1sen!2sin" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+
+<!-- Footer Section -->
+<footer style="background-color:#8B0000; color:#fff; padding:40px 20px;">
+  <div style="max-width:1200px; margin:auto; display:flex; flex-wrap:wrap; gap:30px; justify-content:space-between;">
+    
+    <!-- About -->
+    <div style="flex:1; min-width:200px;">
+      <h3 style="font-family:'Great Vibes', cursive; font-size:24px; margin-bottom:15px;">MehndiArt</h3>
+      <p style="font-family:'Poppins', sans-serif;">We create exquisite mehndi designs for weddings, parties, and special occasions. Our artists bring elegance and creativity in every design.</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div style="flex:1; min-width:150px;">
+      <h4 style="font-family:'Great Vibes', cursive; font-size:20px; margin-bottom:15px;">Quick Links</h4>
+      <ul style="list-style:none; padding:0;">
+        <li><a href="#home" style="color:#fff; text-decoration:none;">Home</a></li>
+        <li><a href="#services" style="color:#fff; text-decoration:none;">Services</a></li>
+        <li><a href="#about" style="color:#fff; text-decoration:none;">About Us</a></li>
+        <li><a href="#gallery" style="color:#fff; text-decoration:none;">Gallery</a></li>
+        <li><a href="#contact" style="color:#fff; text-decoration:none;">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Social Media -->
+    <div style="flex:1; min-width:150px;">
+      <h4 style="font-family:'Great Vibes', cursive; font-size:20px; margin-bottom:15px;">Follow Us</h4>
+      <div style="display:flex; gap:15px;">
+        <a href="https://wa.me/1234567890" target="_blank" style="color:#fff; font-size:24px;">📞</a>
+        <a href="https://instagram.com" target="_blank" style="color:#fff; font-size:24px;">📸</a>
+        <a href="#" style="color:#fff; font-size:24px;">📍</a>
+      </div>
+    </div>
+
+    <!-- Contact Info -->
+    <div style="flex:1; min-width:200px;">
+      <h4 style="font-family:'Great Vibes', cursive; font-size:20px; margin-bottom:15px;">Contact</h4>
+      <p style="font-family:'Poppins', sans-serif;">📞 +91 80060 28201</p>
+      <p style="font-family:'Poppins', sans-serif;">✉️ </p>
+      <p style="font-family:'Poppins', sans-serif;">📍 Auraiya, Uttar Pradesh 206122 </p>
+    </div>
+  </div>
+
+  <!-- White Line Above Footer Bottom -->
+  <hr style="border:0; border-top:1px solid #fff; margin:30px 0;">
+
+  <!-- Footer Bottom -->
+  <div style="text-align:center; font-family:'Poppins', sans-serif; font-size:14px;">
+    &copy; 2025 MehndiArt. All Rights Reserved.
+  </div>
+</footer>
+
+<style>
+@media(max-width:992px){
+  footer div[style*="flex:1"]{
+    flex:0 0 45%;
+  }
+}
+@media(max-width:600px){
+  footer div[style*="flex:1"]{
+    flex:0 0 100%;
+  }
+}
+footer a:hover {
+  color:#b22222;
+}
+</style>
+
+
+<style>
+@media(max-width:992px){
+  #contact div[style*="flex:1"]{
+    flex:0 0 100%;
+  }
+}
+</style>
+
+
+<style>
+@media(max-width:992px){
+  #testimonials div[style*="flex:0 0 calc(33.33% - 20px)"]{
+    flex:0 0 calc(50% - 15px); /* Tablet: 2 per row */
+  }
+}
+@media(max-width:600px){
+  #testimonials div[style*="flex:0 0 calc(33.33% - 20px)"]{
+    flex:0 0 100%; /* Mobile: 1 per row */
+  }
+}
+</style>
+
+
+<style>
+.service-card {
+  flex: 0 0 calc(25% - 15px); /* 4 cards per row with gap adjustment */
+  box-sizing: border-box;
+  background:#fff;
+  border-radius:10px;
+  box-shadow:0 4px 8px rgba(0,0,0,0.2);
+  padding:20px;
+  text-align:center;
+}
+#serviceSlider {
+  display:flex;
+  gap:20px;
+  transition:transform 0.5s ease;
+}
+@media(max-width:992px){
+  .service-card { flex:0 0 calc(50% - 10px); } /* 2 cards per row tablet */
+}
+@media(max-width:600px){
+  .service-card { flex:0 0 100%; } /* 1 card per row mobile */
+}
+</style>
+
+<script>
+const slider = document.getElementById('serviceSlider');
+let offset = 0;
+const totalCards = 8;
+const visibleCards = 4;
+
+function slideRight(){
+  if(offset < totalCards - visibleCards) offset++;
+  slider.style.transform = `translateX(-${offset * (25 + 20/slider.offsetWidth*100)}%)`;
+}
+
+function slideLeft(){
+  if(offset > 0) offset--;
+  slider.style.transform = `translateX(-${offset * (25 + 20/slider.offsetWidth*100)}%)`;
+}
+</script>
+
+<script>
+  const toggle = document.querySelector('.menu-toggle');
+  const menu = document.querySelector('.navbar ul');
+  toggle.addEventListener('click', () => { menu.classList.toggle('active'); });
+
+  // Slider logic
+  let current = 0;
+  const slides = document.querySelectorAll('.slide');
+  setInterval(() => {
+    slides[current].classList.remove('active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('active');
+  }, 4000); // change slide every 4 sec
+</script>
+
+</body>
+</html>
+
+
+
+
+
