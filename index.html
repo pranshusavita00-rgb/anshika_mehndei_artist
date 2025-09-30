@@ -101,10 +101,10 @@
 
 <!-- Hero Section -->
 <div class="hero">
-  <img src="images.jpg" class="slide active" alt="Mehndi Design 1">
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbmM9QTkjgUZTUxgM56OiDEq9EGIUV6aOOkQ&s" class="slide" alt="Mehndi Design 2">
+  <img src="header1.jpeg" class="slide active" alt="Mehndi Design 1">
+<img src="header.jpeg" class="slide" alt="Mehndi Design 2">
   <div class="hero-text">
-    <h1>Welcome to MehndiArt</h1>
+    <h1>Welcome to Anshika Mehndi Art</h1>
     <p>Elegant Mehndi Designs for Every Occasion</p>
   </div>
 </div>
@@ -142,63 +142,68 @@
     </div>
   </div>
 </section>
-<!-- Services Section with Working Slider -->
+<!-- Services Section with Auto Slider -->
 <section id="services" style="padding:60px 20px; background-color:#fdf5f0;">
   <div style="text-align:center; margin-bottom:40px;">
     <h2 style="color:#8B0000; font-size:36px; margin:0;">Our Services</h2>
   </div>
 
-  <div style="max-width:1200px; margin:auto; position:relative; overflow:hidden;">
-    <!-- Slider Container -->
-    <div id="serviceSlider" style="display:flex; gap:20px; transition:transform 0.5s ease;">
+  <div class="slider-wrapper">
+    <div id="serviceSlider" class="slider-track">
       <!-- 8 Cards -->
-      <div class="service-card">
-        <img src="img 2.jpeg" style="width:100%; border-radius:10px; margin-bottom:10px;">
-        <h3 style="color:#8B0000;">Bridal Mehndi</h3>
-        <p>Intricate bridal mehndi designs.</p>
-      </div>
-      <div class="service-card">
-        <img src="img4.jpeg" style="width:100%; border-radius:10px; margin-bottom:10px;">
-        <h3 style="color:#8B0000;">Party Mehndi</h3>
-        <p>Trendy mehndi patterns.</p>
-      </div>
-      <div class="service-card">
-        <img src="kids.jpeg" style="width:100%; border-radius:10px; margin-bottom:10px;">
-        <h3 style="color:#8B0000;">Kids Mehndi</h3>
-        <p>Fun and cute mehndi designs.</p>
-      </div>
-      <div class="service-card">
-        <img src="img6.jpeg" style="width:100%; border-radius:10px; margin-bottom:10px;">
-        <h3 style="color:#8B0000;">Festival Mehndi</h3>
-        <p>Elegant festival designs.</p>
-      </div>
-      <div class="service-card">
-        <img src="img11.jpeg" style="width:100%; border-radius:10px; margin-bottom:10px;">
-        <h3 style="color:#8B0000;">Engagement Mehndi</h3>
-        <p>Beautiful engagement patterns.</p>
-      </div>
-      <div class="service-card">
-        <img src="img10.jpeg" style="width:100%; border-radius:10px; margin-bottom:10px;">
-        <h3 style="color:#8B0000;">Custom Designs</h3>
-        <p>Personalized mehndi artwork.</p>
-      </div>
-      <div class="service-card">
-        <img src="img9.jpeg" style="width:100%; border-radius:10px; margin-bottom:10px;">
-        <h3 style="color:#8B0000;">Henna Parties</h3>
-        <p>Fun small party mehndi sessions.</p>
-      </div>
-      <div class="service-card">
-        <img src="img3.jpeg" style="width:100%; border-radius:10px; margin-bottom:10px;">
-        <h3 style="color:#8B0000;">Festival Specials</h3>
-        <p>Exclusive festival designs.</p>
-      </div>
+      <div class="service-card"><img src="img 2.jpeg" alt="Bridal Mehndi"><h3>Bridal Mehndi</h3><p>Intricate bridal mehndi designs.</p></div>
+      <div class="service-card"><img src="groom.jpeg" alt="Groom Mehndi"><h3>Groom Mehndi</h3><p>Trendy mehndi patterns.</p></div>
+      <div class="service-card"><img src="kids.jpeg" alt="Kids Mehndi"><h3>Kids Mehndi</h3><p>Fun and cute mehndi designs.</p></div>
+      <div class="service-card"><img src="img6.jpeg" alt="Festival Mehndi"><h3>Festival Mehndi</h3><p>Elegant festival designs.</p></div>
+      <div class="service-card"><img src="img11.jpeg" alt="Engagement Mehndi"><h3>Engagement Mehndi</h3><p>Beautiful engagement patterns.</p></div>
+      <div class="service-card"><img src="img10.jpeg" alt="Custom Designs"><h3>Custom Designs</h3><p>Personalized mehndi artwork.</p></div>
+      <div class="service-card"><img src="img9.jpeg" alt="Henna Parties"><h3>Henna Parties</h3><p>Fun small party mehndi sessions.</p></div>
+      <div class="service-card"><img src="img3.jpeg" alt="Festival Specials"><h3>Festival Specials</h3><p>Exclusive festival designs.</p></div>
     </div>
-
-    <!-- Slider Buttons -->
-    <button onclick="slideLeft()" style="position:absolute; top:50%; left:0; transform:translateY(-50%); background:#8B0000; color:#fff; border:none; padding:10px; border-radius:50%; cursor:pointer;">&#10094;</button>
-    <button onclick="slideRight()" style="position:absolute; top:50%; right:0; transform:translateY(-50%); background:#8B0000; color:#fff; border:none; padding:10px; border-radius:50%; cursor:pointer;">&#10095;</button>
   </div>
 </section>
+
+<style>
+.slider-wrapper {
+  max-width:1200px;
+  margin:auto;
+  overflow:hidden;
+  position:relative;
+}
+.slider-track {
+  display:flex;
+  gap:20px;
+  animation: slide 10s linear infinite;
+}
+.service-card {
+  flex:0 0 25%;
+  background:#fff;
+  border-radius:10px;
+  padding:15px;
+  box-sizing:border-box;
+  text-align:center;
+  box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+.service-card img {
+  width:100%;
+  border-radius:10px;
+  margin-bottom:10px;
+}
+.service-card h3 { color:#8B0000; margin:10px 0; }
+.service-card p { font-size:14px; color:#333; }
+
+/* Keyframes for auto sliding */
+@keyframes slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* adjust based on number of cards */
+}
+
+/* Responsive */
+@media(max-width:992px){ .service-card { flex:0 0 50%; } }
+@media(max-width:600px){ .service-card { flex:0 0 100%; } }
+</style>
+
+
 
 <!-- Testimonials Section -->
 <section id="testimonials" style="padding:60px 20px; background-color:#fff;">
@@ -206,36 +211,88 @@
     <h2 style="color:#8B0000; font-size:36px; margin:0;">What Our Clients Say</h2>
   </div>
 
-  <div style="max-width:1200px; margin:auto; display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">
+  <div class="testimonial-wrapper">
     <!-- Testimonial 1 -->
-    <div style="flex:0 0 calc(33.33% - 20px); background:#fdf5f0; border-radius:10px; padding:20px; box-shadow:0 4px 8px rgba(0,0,0,0.2); text-align:center;">
-      <img src="" style="width:80px; height:80px; border-radius:50%; margin-bottom:15px;">
-      <p style="font-style:italic; color:#333;">"The bridal mehndi was absolutely stunning! Everyone admired it."</p>
-      <h4 style="color:#8B0000; margin-top:10px;">Priya Sharma</h4>
+    <div class="testimonial-card">
+      <img src="https://via.placeholder.com/80" alt="Priya Sharma">
+      <p>"The bridal mehndi was absolutely stunning! Everyone admired it."</p>
+      <h4>Priya Sharma</h4>
     </div>
 
     <!-- Testimonial 2 -->
-    <div style="flex:0 0 calc(33.33% - 20px); background:#fdf5f0; border-radius:10px; padding:20px; box-shadow:0 4px 8px rgba(0,0,0,0.2); text-align:center;">
-      <img src="" style="width:80px; height:80px; border-radius:50%; margin-bottom:15px;">
-      <p style="font-style:italic; color:#333;">"Amazing party mehndi designs. Loved the creativity and detail."</p>
-      <h4 style="color:#8B0000; margin-top:10px;">Rohit Verma</h4>
+    <div class="testimonial-card">
+      <img src="https://via.placeholder.com/80" alt="Rohit Verma">
+      <p>"Amazing party mehndi designs. Loved the creativity and detail."</p>
+      <h4>Rohit Verma</h4>
     </div>
 
     <!-- Testimonial 3 -->
-    <div style="flex:0 0 calc(33.33% - 20px); background:#fdf5f0; border-radius:10px; padding:20px; box-shadow:0 4px 8px rgba(0,0,0,0.2); text-align:center;">
-      <img src="" style="width:80px; height:80px; border-radius:50%; margin-bottom:15px;">
-      <p style="font-style:italic; color:#333;">"Kids mehndi designs were super cute and fun. Highly recommend!"</p>
-      <h4 style="color:#8B0000; margin-top:10px;">Anita Kapoor</h4>
+    <div class="testimonial-card">
+      <img src="https://via.placeholder.com/80" alt="Anita Kapoor">
+      <p>"Kids mehndi designs were super cute and fun. Highly recommend!"</p>
+      <h4>Anita Kapoor</h4>
     </div>
-    
+
     <!-- Testimonial 4 -->
-    <div style="flex:0 0 calc(33.33% - 20px); background:#fdf5f0; border-radius:10px; padding:20px; box-shadow:0 4px 8px rgba(0,0,0,0.2); text-align:center;">
-      <img src="" style="width:80px; height:80px; border-radius:50%; margin-bottom:15px;">
-      <p style="font-style:italic; color:#333;">"Festival mehndi designs were so elegant. Love the attention to detail."</p>
-      <h4 style="color:#8B0000; margin-top:10px;">Vikram Singh</h4>
+    <div class="testimonial-card">
+      <img src="https://via.placeholder.com/80" alt="Vikram Singh">
+      <p>"Festival mehndi designs were so elegant. Love the attention to detail."</p>
+      <h4>Vikram Singh</h4>
     </div>
   </div>
 </section>
+
+<style>
+  .testimonial-wrapper {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap; /* allow wrapping */
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .testimonial-card {
+    background: #fdf5f0;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    flex: 1 1 calc(25% - 20px); /* responsive width */
+    box-sizing: border-box;
+    min-width: 250px; /* ensure card doesn’t shrink too much */
+  }
+
+  .testimonial-card img {
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+  }
+
+  .testimonial-card p {
+    font-style: italic;
+    color: #333;
+  }
+
+  .testimonial-card h4 {
+    color: #8B0000;
+    margin-top: 10px;
+  }
+
+  /* Responsive breakpoints */
+  @media (max-width: 992px) {
+    .testimonial-card {
+      flex: 1 1 calc(50% - 20px); /* 2 cards per row */
+    }
+  }
+
+  @media (max-width: 600px) {
+    .testimonial-card {
+      flex: 1 1 100%; /* 1 card per row */
+    }
+  }
+</style>
+
 
 <!-- Offers Section -->
 <section id="offers" style="padding:60px 20px; background-color:#fff;">
