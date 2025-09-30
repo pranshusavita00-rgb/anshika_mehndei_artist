@@ -86,31 +86,33 @@
   <ul>
     <li><a href="#">Home</a></li>
     
-    <li><a href="#">About Us</a></li>
-    <li><a href="#">Service</a></li>
-    <li><a href="#">Gallery</a></li>
-    <li><a href="#">Contact Us</a></li>
+    <li><a href="#about">About Us</a></li>
+    <li><a href="#service">Service</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="#contact">Contact Us</a></li>
+    <li><a href="#testimonial">Testimonial</a></li>
   </ul>
-  <div class="social-icons">
+ <div class="social-icons">
     <!-- WhatsApp -->
     <a href="https://wa.me/918006028201" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
     <!-- Instagram -->
     <a href="https://www.instagram.com/anshika_mehndi_artist/" target="_blank"><i class="fab fa-instagram"></i></a>
 
-    <!-- Phone -->
-    <a href="tel:+918006028201"><i class="fas fa-phone"></i></a>
+    <!-- Phone (click karte hi dial pad open ho) -->
+    <a href="tel:+916386345286"><i class="fas fa-phone"></i></a>
 
-    <!-- Map  -->
-  <a href="https://www.google.com/maps/place/Auraiya,+Uttar+Pradesh+206122/@26.4619788,79.4926932,15z" target="_blank">
+    <!-- Map (link aap baad mai add karenge) -->
+    <a href="https://www.google.com/maps/place/Auraiya,+Uttar+Pradesh+206122/@26.4619788,79.4926932,15z" target="_blank">
         <i class="fas fa-map-marker-alt"></i>
     </a>
 
 </div>
+
 </nav>
 
 <!-- Hero Section -->
-<div class="hero">
+<div class="hero" >
   <img src="header1.jpeg" class="slide active" alt="Mehndi Design 1">
 <img src="header.jpeg" class="slide" alt="Mehndi Design 2">
   <div class="hero-text">
@@ -122,7 +124,7 @@
 <section id="about" style="padding: 60px 20px; background-color: #fff;">
 
   <!-- Centered Heading -->
-  <div style="text-align: center; margin-bottom: 40px;">
+  <div style="text-align: center; margin-bottom: 40px;" id="about">
     <h2 style="color: #8B0000; font-size: 36px; margin: 0;">About Us</h2>
   </div>
 
@@ -152,15 +154,13 @@
     </div>
   </div>
 </section>
-<!-- Services Section with Auto Slider -->
 <section id="services" style="padding:60px 20px; background-color:#fdf5f0;">
-  <div style="text-align:center; margin-bottom:40px;">
+  <div style="text-align:center; margin-bottom:40px;" id="service">
     <h2 style="color:#8B0000; font-size:36px; margin:0;">Our Services</h2>
   </div>
 
   <div class="slider-wrapper">
-    <div id="serviceSlider" class="slider-track">
-      <!-- 8 Cards -->
+    <div class="slider-track">
       <div class="service-card"><img src="img 2.jpeg" alt="Bridal Mehndi"><h3>Bridal Mehndi</h3><p>Intricate bridal mehndi designs.</p></div>
       <div class="service-card"><img src="groom.jpeg" alt="Groom Mehndi"><h3>Groom Mehndi</h3><p>Trendy mehndi patterns.</p></div>
       <div class="service-card"><img src="kids.jpeg" alt="Kids Mehndi"><h3>Kids Mehndi</h3><p>Fun and cute mehndi designs.</p></div>
@@ -183,16 +183,20 @@
 .slider-track {
   display:flex;
   gap:20px;
-  animation: slide 10s linear infinite;
+  animation: slide 10s linear infinite; /* slow smooth scroll */
 }
 .service-card {
-  flex:0 0 25%;
+  flex:0 0 25%; /* 4 cards visible at a time */
   background:#fff;
   border-radius:10px;
   padding:15px;
   box-sizing:border-box;
   text-align:center;
   box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+.service-card {
+  flex:0 0 12.5%; /* 8 cards in one row */
+  margin:0;        /* remove gap to fit perfectly */
 }
 .service-card img {
   width:100%;
@@ -202,10 +206,10 @@
 .service-card h3 { color:#8B0000; margin:10px 0; }
 .service-card p { font-size:14px; color:#333; }
 
-/* Keyframes for auto sliding */
+/* Smooth continuous sliding */
 @keyframes slide {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); } /* adjust based on number of cards */
+  100% { transform: translateX(-50%); } /* half track distance */
 }
 
 /* Responsive */
@@ -213,11 +217,9 @@
 @media(max-width:600px){ .service-card { flex:0 0 100%; } }
 </style>
 
-
-
 <!-- Testimonials Section -->
 <section id="testimonials" style="padding:60px 20px; background-color:#fff;">
-  <div style="text-align:center; margin-bottom:40px;">
+  <div style="text-align:center; margin-bottom:40px;" id="testimonial">
     <h2 style="color:#8B0000; font-size:36px; margin:0;">What Our Clients Say</h2>
   </div>
 
@@ -303,6 +305,10 @@
   }
 </style>
 
+
+
+
+
 <!-- Offers Section -->
 <section id="offers" style="padding:60px 20px; background-color:#fff;">
   <div style="text-align:center; margin-bottom:40px;">
@@ -377,8 +383,6 @@
   .offer-card { max-width:100%; } /* 1 per row */
 }
 </style>
-
-
 <!-- Contact Us Section -->
 <section id="contact" style="padding:60px 20px; background-color:#fdf5f0;">
   <div style="text-align:center; margin-bottom:40px;">
@@ -457,8 +461,8 @@
     <!-- Contact Info -->
     <div style="flex:1; min-width:200px;">
       <h4 style="font-family:'Great Vibes', cursive; font-size:20px; margin-bottom:15px;">Contact</h4>
-   <a href="tel:+918006028201">📞<a/>   <p style="font-family:'Poppins', sans-serif;"> +91 80060 28201</p>
-      <p style="font-family:'Poppins', sans-serif;">✉️ anshikamehndiartist01@gmail.com </p>
+      <p style="font-family:'Poppins', sans-serif;">📞 +91 80060 28201</p>
+      <p style="font-family:'Poppins', sans-serif;">✉️ anshikamehndiartist@gmail.com </p>
       <p style="font-family:'Poppins', sans-serif;">📍 Auraiya, Uttar Pradesh 206122 </p>
     </div>
   </div>
@@ -569,6 +573,7 @@ function slideLeft(){
 
 </body>
 </html>
+
 
 
 
