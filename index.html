@@ -368,7 +368,6 @@ showSlide(0);
 
 
 
-
 <!-- Offers Section -->
 <section id="offers" style="padding:60px 20px; background-color:#fff;">
   <div style="text-align:center; margin-bottom:40px;">
@@ -376,62 +375,53 @@ showSlide(0);
   </div>
 
   <div class="offers-container">
-    <!-- Offer 1 -->
+    <!-- Single Offer -->
     <div class="offer-card">
       <h3>Advance Booking</h3>
       <p>Get 10% off on bridal mehndi for weddings booked this month!</p>
     </div>
-
-   
   </div>
 </section>
 
 <style>
 .offers-container {
-  display:flex;
-  justify-content:space-between;
-  gap:20px;
-  flex-wrap:wrap; /* allows wrapping if very small screen */
+  display: flex;
+  justify-content: center; /* center the single card */
+  gap: 20px;
 }
 
 .offer-card {
-  flex:1 1 0; /* allows cards to shrink/grow equally */
-  min-width:250px; /* prevents too small cards */
+  width: 100%;       /* full width on mobile */
+  
   background: linear-gradient(135deg, #fdebd0, #fef3f1);
-  border-radius:15px;
-  padding:30px 20px;
-  text-align:center;
-  box-shadow:0 6px 15px rgba(0,0,0,0.2);
+  border-radius: 15px;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor:pointer;
-  max-width:32%; /* ensures 3 cards in a row */
+  cursor: pointer;
 }
 
 .offer-card h3 {
-  color:#8B0000;
-  font-family:'Great Vibes', cursive;
-  font-size:24px;
-  margin-bottom:15px;
+  color: #8B0000;
+  font-family: 'Great Vibes', cursive;
+  font-size: 24px;
+  margin-bottom: 15px;
 }
+
 .offer-card p {
-  font-family:'Poppins', sans-serif;
-  font-size:16px;
-  color:#333;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  color: #333;
 }
 
 .offer-card:hover {
   transform: translateY(-10px);
-  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
   background: linear-gradient(135deg, #ffe6e1, #fdebd0);
 }
+</style>
 
-/* Responsive adjustments */
-@media(max-width:992px){
-  .offer-card { max-width:48%; } /* 2 per row */
-}
-@media(max-width:600px){
-  .offer-card { max-width:100%; } /* 1 per row */
-}
 </style>
 <!-- Contact Us Section -->
 <section id="contact" style="padding:60px 20px; background-color:#fdf5f0;">
@@ -623,6 +613,7 @@ function slideLeft(){
 
 </body>
 </html>
+
 
 
 
