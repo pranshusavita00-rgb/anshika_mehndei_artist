@@ -160,67 +160,122 @@
   </div>
 </section>
 <section id="services" style="padding:60px 20px; background-color:#fdf5f0;">
-  <div style="text-align:center; margin-bottom:40px;" id="service">
+  <div style="text-align:center; margin-bottom:40px;">
     <h2 style="color:#8B0000; font-size:36px; margin:0;">Our Services</h2>
   </div>
 
-  <div class="slider-wrapper">
+  <div class="slider-container">
     <div class="slider-track">
-      <div class="service-card"><img src="img 2.jpeg" alt="Bridal Mehndi"><h3>Bridal Mehndi</h3><p>Intricate bridal mehndi designs.</p></div>
-      <div class="service-card"><img src="groom.jpeg" alt="Groom Mehndi"><h3>Groom Mehndi</h3><p>Trendy mehndi patterns.</p></div>
-      <div class="service-card"><img src="kids.jpeg" alt="Kids Mehndi"><h3>Kids Mehndi</h3><p>Fun and cute mehndi designs.</p></div>
-      <div class="service-card"><img src="img6.jpeg" alt="Festival Mehndi"><h3>Festival Mehndi</h3><p>Elegant festival designs.</p></div>
-      <div class="service-card"><img src="img11.jpeg" alt="Engagement Mehndi"><h3>Engagement Mehndi</h3><p>Beautiful engagement patterns.</p></div>
-      <div class="service-card"><img src="img10.jpeg" alt="Custom Designs"><h3>Custom Designs</h3><p>Personalized mehndi artwork.</p></div>
-      <div class="service-card"><img src="img9.jpeg" alt="Henna Parties"><h3>Henna Parties</h3><p>Fun small party mehndi sessions.</p></div>
-      <div class="service-card"><img src="img3.jpeg" alt="Festival Specials"><h3>Festival Specials</h3><p>Exclusive festival designs.</p></div>
+      <div class="service-card"><img src="img 2.jpeg" alt="Bridal Mehndi"><h3>Bridal Mehndi</h3></div>
+      <div class="service-card"><img src="groom.jpeg" alt="Groom Mehndi"><h3>Groom Mehndi</h3></div>
+      <div class="service-card"><img src="kids.jpeg" alt="Kids Mehndi"><h3>Kids Mehndi</h3></div>
+      <div class="service-card"><img src="img6.jpeg" alt="Festival Mehndi"><h3>Festival Mehndi</h3></div>
+      <div class="service-card"><img src="img11.jpeg" alt="Engagement Mehndi"><h3>Engagement Mehndi</h3></div>
+      <div class="service-card"><img src="img10.jpeg" alt="Custom Designs"><h3>Custom Designs</h3></div>
+      <div class="service-card"><img src="img9.jpeg" alt="Henna Parties"><h3>Henna Parties</h3></div>
+      <div class="service-card"><img src="img3.jpeg" alt="Festival Specials"><h3>Festival Specials</h3></div>
     </div>
+    <button class="prev">&lt;</button>
+    <button class="next">&gt;</button>
   </div>
 </section>
 
 <style>
-.slider-wrapper {
-  max-width:1200px;
-  margin:auto;
-  overflow:hidden;
-  position:relative;
+.slider-container {
+  position: relative;
+  overflow: hidden;
+  max-width: 1200px;
+  margin: auto;
 }
 .slider-track {
-  display:flex;
-  gap:20px;
-  animation: slide 10s linear infinite; /* slow smooth scroll */
+  display: flex;
+  transition: transform 0.5s ease-in-out;
 }
 .service-card {
-  flex:0 0 25%; /* 4 cards visible at a time */
-  background:#fff;
-  border-radius:10px;
-  padding:15px;
-  box-sizing:border-box;
-  text-align:center;
-  box-shadow:0 4px 10px rgba(0,0,0,0.2);
+  flex: 0 0 25%;
+  margin: 10px;
+  background: #fff;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
-.service-card {
-  flex:0 0 12.5%; /* 8 cards in one row */
-  margin:0;        /* remove gap to fit perfectly */
-}
-.service-card img {
-  width:100%;
-  border-radius:10px;
-  margin-bottom:10px;
-}
-.service-card h3 { color:#8B0000; margin:10px 0; }
-.service-card p { font-size:14px; color:#333; }
+.service-card img { width: 100%; border-radius:10px; }
+.service-card h3 { color:#8B0000; margin:10px 0; font-size:16px; }
 
-/* Smooth continuous sliding */
-@keyframes slide {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); } /* half track distance */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background:#8B0000;
+  color:#fff;
+  border:none;
+  padding:10px;
+  border-radius:50%;
+  cursor:pointer;
+}
+.prev { left:10px; } 
+.next { right:10px; }
+
+.prev:disabled, .next:disabled {
+  background: #ccc;
+  cursor: not-allowed;
 }
 
 /* Responsive */
 @media(max-width:992px){ .service-card { flex:0 0 50%; } }
 @media(max-width:600px){ .service-card { flex:0 0 100%; } }
 </style>
+
+<script>
+const track = document.querySelector('.slider-track');
+const cards = document.querySelectorAll('.service-card');
+const next = document.querySelector('.next');
+const prev = document.querySelector('.prev');
+
+let index = 0;
+
+function updateButtons() {
+  const cardsPerView = getCardsPerView();
+  prev.disabled = index === 0;
+  next.disabled = index >= cards.length - cardsPerView;
+}
+
+function getCardsPerView() {
+  if(window.innerWidth <= 600) return 1;
+  if(window.innerWidth <= 992) return 2;
+  return 4;
+}
+
+function showSlide(i){
+  const cardWidth = cards[0].offsetWidth + 20; // include margin
+  track.style.transform = `translateX(${-cardWidth * i}px)`;
+  updateButtons();
+}
+
+next.addEventListener('click', ()=>{
+  const cardsPerView = getCardsPerView();
+  if(index < cards.length - cardsPerView){
+    index++;
+    showSlide(index);
+  }
+});
+
+prev.addEventListener('click', ()=>{
+  if(index > 0){
+    index--;
+    showSlide(index);
+  }
+});
+
+// Update buttons on resize
+window.addEventListener('resize', ()=>{
+  showSlide(index);
+});
+
+// Initialize
+showSlide(0);
+</script>
+
 
 <!-- Testimonials Section -->
 <section id="testimonials" style="padding:60px 20px; background-color:#fff;">
@@ -578,6 +633,7 @@ function slideLeft(){
 
 </body>
 </html>
+
 
 
 
