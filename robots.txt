@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pranshusavita00-rgb.github.io/anshika_mehndei_artist/sitemap.xml
