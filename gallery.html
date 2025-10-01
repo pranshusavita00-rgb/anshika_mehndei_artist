@@ -9,9 +9,10 @@
   body {
     margin: 0;
     font-family: Arial, sans-serif;
+    background: #fdf5f0;
   }
 
-  /* Navbar (from earlier) */
+  /* Navbar */
   .navbar {
     display: flex;
     justify-content: space-between;
@@ -53,16 +54,9 @@
     display: none;
     object-fit: cover;
   }
-  .slide.active {
-    display: block;
-    animation: fade 1s ease-in-out;
-  }
-  @keyframes fade {
-    from { opacity: 0.4; }
-    to { opacity: 1; }
-  }
+  .slide.active { display: block; animation: fade 1s ease-in-out; }
+  @keyframes fade { from {opacity: 0.4;} to {opacity:1;} }
 
-  /* Slider text */
   .hero-text {
     position: absolute;
     top: 50%;
@@ -73,226 +67,165 @@
   }
   .hero-text h1 { font-size: 48px; margin: 0; text-shadow: 2px 2px 5px rgba(0,0,0,0.6); }
   .hero-text p { font-size: 20px; margin-top: 10px; text-shadow: 1px 1px 4px rgba(0,0,0,0.6); }
- body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #fdf5f0;
-    }
-    .gallery-container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 40px 20px;
-    }
-    h2 {
-      text-align: center;
-      color: #8B0000;
-      font-size: 36px;
-      margin-bottom: 40px;
-    }
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr); /* 4 columns */
-      gap: 20px;
-    }
-    .gallery-card {
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      overflow: hidden;
-      text-align: center;
-      transition: transform 0.3s;
-    }
-    .gallery-card:hover {
-      transform: scale(1.05);
-    }
-    .gallery-card img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-    }
-    .gallery-card h4 {
-      margin: 10px 0;
-      color: #8B0000;
-    }
 
-    /* Responsive */
-    @media(max-width:992px) {
-      .gallery-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns tablet */
-      }
-    }
-    @media(max-width:600px) {
-      .gallery-grid {
-        grid-template-columns: 1fr; /* 1 column mobile */
-      }
-    }
-
-    .about-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-  align-items: center;
-}
-
-.about-card {
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  overflow: hidden;
-  text-align: center;
-  transition: transform 0.3s;
-}
-.about-card:hover {
-  transform: scale(1.05);
-}
-.about-card img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-}
-.about-card h4 {
-  margin: 10px 0;
-  color: #8B0000;
-}
-
-.about-text h3 {
-  color: #8B0000;
-  margin-bottom: 15px;
-}
-.about-text p {
-  font-size: 16px;
-  color: #333;
-  line-height: 1.6;
-}
-
-/* Responsive */
-@media(max-width: 768px) {
-  .about-row {
-    grid-template-columns: 1fr;
+  /* Gallery Section */
+  .gallery-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px;
   }
-}
+  .gallery-container h2 {
+    text-align: center;
+    color: #8B0000;
+    font-size: 36px;
+    margin-bottom: 40px;
+  }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .gallery-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s;
+  }
+  .gallery-card:hover { transform: scale(1.05); }
+  .gallery-card img {
+    width: 100%;
+    height: auto;       /* Automatic height */
+    object-fit: contain; /* Show full image */
+    display: block;
+    border-radius: 10px 10px 0 0;
+  }
+  .gallery-card h4 {
+    margin: 10px 0;
+    color: #8B0000;
+  }
+
+  /* About/Home Made Mehndi Section */
+  .about-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+    margin-top: 40px;
+  }
+  .about-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s;
+  }
+  .about-card:hover { transform: scale(1.05); }
+  .about-card img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
+  .about-card h4 { margin: 10px 0; color: #8B0000; }
+  .about-text h3 { color: #8B0000; margin-bottom: 15px; }
+  .about-text p { font-size: 16px; color: #333; line-height: 1.6; }
+
+  /* Responsive */
+  @media(max-width:992px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media(max-width:768px) { .about-row { grid-template-columns: 1fr; } }
+  @media(max-width:600px) { .gallery-grid { grid-template-columns: 1fr; } }
+
 </style>
 </head>
 <body>
 
 <!-- Navbar -->
 <nav class="navbar">
-  <div class="logo">Anshika_mehndi_artist
-</div>
+  <div class="logo">Anshika Mehndi Artist</div>
   <i class="fas fa-bars menu-toggle"></i>
   <ul>
     <li><a href="index.html">Home</a></li>
-    
-    <li ><a href="index.html#about" id="about">About Us</a></li>
+    <li><a href="index.html#about">About Us</a></li>
     <li><a href="index.html#service">Service</a></li>
     <li><a href="gallery.html#gallery">Gallery</a></li>
     <li><a href="index.html#contact">Contact Us</a></li>
   </ul>
- <div class="social-icons">
-    <!-- WhatsApp -->
+  <div class="social-icons">
     <a href="https://wa.me/918006028201" target="_blank"><i class="fab fa-whatsapp"></i></a>
-
-    <!-- Instagram -->
     <a href="https://www.instagram.com/anshika_mehndi_artist/" target="_blank"><i class="fab fa-instagram"></i></a>
-
-    <!-- Phone (click karte hi dial pad open ho) -->
     <a href="tel:+916386345286"><i class="fas fa-phone"></i></a>
-
-    <!-- Map (link aap baad mai add karenge) -->
-    <a href="https://www.google.com/maps/place/Auraiya,+Uttar+Pradesh+206122/@26.4619788,79.4926932,15z" target="_blank">
-        <i class="fas fa-map-marker-alt"></i>
-    </a>
-
-</div>
-
+    <a href="https://www.google.com/maps/place/Auraiya,+Uttar+Pradesh+206122/@26.4619788,79.4926932,15z" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+  </div>
 </nav>
 
 <!-- Hero Section -->
-<div class="hero" >
+<div class="hero">
   <img src="102.jpeg" class="slide active" alt="Mehndi Design 1">
-<img src="11.jpeg" class="slide" alt="Mehndi Design 2">
+  <img src="11.jpeg" class="slide" alt="Mehndi Design 2">
   <div class="hero-text">
-    <h1>Welcome to Our Mehndi design</h1>
+    <h1>Welcome to Our Mehndi Design</h1>
     <p>Elegant Mehndi Designs for Every Occasion</p>
   </div>
 </div>
-  <style>
-   
-  </style>
-</head>
 
-  <div class="gallery-container">
-    <h2></h2>
-    <div class="gallery-grid">
+<!-- Gallery Section -->
+<div class="gallery-container">
+  <h2>Our Mehndi Designs</h2>
+  <div class="gallery-grid">
+      <div class="gallery-card">
+        <img src="14.jpeg" alt="Kids Mehndi">
+        
+      </div>
+       <div class="gallery-card">
+        <img src="15.jpeg" alt="Kids Mehndi">
+        
+      </div>
 
+      
+       <div class="gallery-card">
+        <img src="113.jpeg" alt="Kids Mehndi">
+      </div>
+        <div class="gallery-card">
+        <img src="114.jpeg" alt="Kids Mehndi">
+      </div>
+    
+  </div>
+</div>
 
-      <div class="gallery-card">
-        <img src="images.jpg" alt="Bridal Mehndi">
-        <h4></h4>
-      </div>
-      <div class="gallery-card">
-        <img src="img 2.jpeg" alt="Groom Mehndi">
-        <h4></h4>
-      </div>
-      <div class="gallery-card">
-        <img src="groom.jpeg" alt="Kids Mehndi">
-        <h4></h4>
-      </div>
-      <div class="gallery-card">
-        <img src="header1.jpeg" alt="Festival Mehndi">
-        <h4></h4>
-      </div>
-      </div>
-      <!-- About + Card Section -->
+<!-- About/Home Made Mehndi -->
 <div class="gallery-container">
   <h2>Home Made Mehndi</h2>
   <div class="about-row">
-    <!-- Left Side Card -->
     <div class="about-card">
       <img src="home made.jpeg" alt="Home Made Mehndi">
-      <h4> Natural Mehndi</h4>
+      <h4>Natural Mehndi</h4>
     </div>
-
-    <!-- Right Side Text -->
     <div class="about-text">
       <h3>Why Choose Our Home Made Mehndi?</h3>
       <p>
-       * 100% Chemical-Free: We use pure, natural mehndi—safe for every skin type.
-* No Side Effects: Gentle and skin-friendly, even for sensitive hands.
-* Long-Lasting Stain: Rich, deep color that stays beautifully for days.
-* No Peel-Off Cones: Only authentic henna—no fake peel-off formulas.
-* Affordable Pricing: Top-quality designs that fit every budget.
+        * 100% Chemical-Free: Pure, natural mehndi, safe for every skin type.<br>
+        * No Side Effects: Gentle and skin-friendly, even for sensitive hands.<br>
+        * Long-Lasting Stain: Rich, deep color that lasts days.<br>
+        * No Peel-Off Cones: Only authentic henna, no fake formulas.<br>
+        * Affordable Pricing: Top-quality designs for every budget.
       </p>
       <p>
-        ✅ Chemical Free  
-        ✅ Skin Friendly  
-        ✅ Long Lasting Color  
+        ✅ Chemical Free<br>
+        ✅ Skin Friendly<br>
+        ✅ Long Lasting Color<br>
         ✅ Natural Fragrance
       </p>
     </div>
   </div>
 </div>
+
+<!-- first Gallery -->
  <div class="gallery-container">
     <div class="gallery-grid">
 
-
-      <div class="gallery-card">
-        <img src="1.jpeg" alt="Bridal Mehndi">
-        
-      </div>
-      <div class="gallery-card">
-        <img src="2.jpeg" alt="Groom Mehndi">
-       
-      </div>
-      <div class="gallery-card">
-        <img src="3.jpeg" alt="Kids Mehndi">
-       
-      </div>
-      <div class="gallery-card">
-        <img src="4.jpeg" alt="Festival Mehndi">
-       
-      </div>
       <div class="gallery-card">
         <img src="5.jpeg" alt="Kids Mehndi">
         
@@ -307,27 +240,56 @@
       </div>
        <div class="gallery-card">
         <img src="img6.jpeg" alt="Kids Mehndi">
-       00000
-      </div>
-        <div class="gallery-card">
-        <img src="14.jpeg" alt="Kids Mehndi">
-        
-      </div>
-       <div class="gallery-card">
-        <img src="15.jpeg" alt="Kids Mehndi">
-        
-      </div>
-       <div class="gallery-card">
-        <img src="16.jpeg" alt="Kids Mehndi">
        
       </div>
+
+      <!-- Second Gallery -->
+
+       <div class="gallery-card">
+        <img src="104.jpeg" alt="Kids Mehndi">
+      </div>
         <div class="gallery-card">
-        <img src="17.jpeg" alt="Kids Mehndi">
-        
+        <img src="105.jpeg" alt="Kids Mehndi">
       </div>
        <div class="gallery-card">
+        <img src="106.jpeg" alt="Kids Mehndi">
+      </div>
+       <div class="gallery-card">
+        <img src="107.jpeg" alt="Kids Mehndi">
+      </div>
+
+      <!-- third Gallery -->
+
+        <div class="gallery-card">
+        <img src="108.jpeg" alt="Kids Mehndi">
+      </div>
+       <div class="gallery-card">
+        <img src="109.jpeg" alt="Kids Mehndi">
+      </div>
+       <div class="gallery-card">
+        <img src="110.jpeg" alt="Kids Mehndi">
+      </div>
+        <div class="gallery-card">
+        <img src="111.jpeg" alt="Kids Mehndi">
+      </div>
+
+
+     
+      <!-- fourth Gallery -->
+      
+       <div class="gallery-card"><img src="115.jpeg" alt="Bridal Mehndi"></div>
+    <div class="gallery-card"><img src="116.jpeg" alt="Groom Mehndi"></div>
+    <div class="gallery-card"><img src="117.jpeg" alt="Kids Mehndi"></div>
+    <div class="gallery-card"><img src="101.jpeg" alt="Festival Mehndi"></div>
+
+       <!-- fiveth Gallery -->
+          <div class="gallery-card">
         <img src="18.jpeg" alt="Kids Mehndi">
         
+      </div>
+      
+       <div class="gallery-card">
+        <img src="103.jpeg" alt="Kids Mehndi">
       </div>
        <div class="gallery-card">
         <img src="101.jpeg" alt="Kids Mehndi">
@@ -335,78 +297,38 @@
       </div>
         <div class="gallery-card">
         <img src="102.jpeg" alt="Kids Mehndi">
-        
-      </div>
-       <div class="gallery-card">
-        <img src="103.jpeg" alt="Kids Mehndi">
-        
-      </div>
-       <div class="gallery-card">
-        <img src="104.jpeg" alt="Kids Mehndi">
-       
-      </div>
-        <div class="gallery-card">
-        <img src="105.jpeg" alt="Kids Mehndi">
-        
-      </div>
-       <div class="gallery-card">
-        <img src="106.jpeg" alt="Kids Mehndi">
-        
-      </div>
-       <div class="gallery-card">
-        <img src="107.jpeg" alt="Kids Mehndi">
-       
-      </div>
-        <div class="gallery-card">
-        <img src="108.jpeg" alt="Kids Mehndi">
-        
-      </div>
-       <div class="gallery-card">
-        <img src="109.jpeg" alt="Kids Mehndi">
-        
-      </div>
-       <div class="gallery-card">
-        <img src="110.jpeg" alt="Kids Mehndi">
-       
-      </div>
-        <div class="gallery-card">
-        <img src="111.jpeg" alt="Kids Mehndi">
-        
-      </div>
-       <div class="gallery-card">
-        <img src="112.jpeg" alt="Kids Mehndi">
-        
-      </div>
-       <div class="gallery-card">
-        <img src="113.jpeg" alt="Kids Mehndi">
-       
       </div>
 
-        <div class="gallery-card">
-        <img src="114.jpeg" alt="Kids Mehndi">
-        
-      </div>
-       <div class="gallery-card">
-        <img src="115.jpeg" alt="Kids Mehndi">
-        
-      </div>
-       <div class="gallery-card">
-        <img src="116.jpeg" alt="Kids Mehndi">
-       
-      </div>
       
-      </div>
+
+
+      <!-- six  Gallery -->
+     
+
+
+<!-- Second Gallery -->
+
+     
    
 
 
+<!-- JS for Navbar toggle & Hero slider -->
+<script>
+const menuToggle = document.querySelector('.menu-toggle');
+const navUl = document.querySelector('.navbar ul');
+menuToggle.addEventListener('click', () => {
+  navUl.classList.toggle('active');
+});
+
+// Hero slider
+let slides = document.querySelectorAll('.slide');
+let current = 0;
+setInterval(() => {
+  slides[current].classList.remove('active');
+  current = (current + 1) % slides.length;
+  slides[current].classList.add('active');
+}, 4000);
+</script>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
